@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Settings - Drone Delivery App</title>
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-drone"></i> Drone Delivery Service</h1>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li onclick="navigateTo('index.html')"><i class="fas fa-home"></i> Home</li>
+                <li onclick="navigateTo('orders.html')"><i class="fas fa-shopping-cart"></i> Orders</li>
+                <li onclick="navigateTo('tracking.html')"><i class="fas fa-map-marker-alt"></i> Tracking</li>
+                <li onclick="navigateTo('settings.html')"><i class="fas fa-cogs"></i> Settings</li>
+                <li onclick="navigateTo('about.html')"><i class="fas fa-info-circle"></i> About</li>
+            </ul>
+        </aside>
+        <main>
+            <section id="settings">
+                <h2>Settings <i class="fas fa-cogs"></i></h2>
+                <p>Manage your account settings here.</p>
+                <!-- Add more settings options as needed -->
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Drone Delivery Service</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
