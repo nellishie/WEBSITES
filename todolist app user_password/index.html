@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grocery List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <div class="login-form">
+            <h2>Welcome To My </h2>
+            <h2>Login page </h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <p id="login-error" style="color: red;"></p>
+        </div>
+    </div>
+
+    <div class="container" id="app-container" style="display: none;">
+        <div class="list-app">
+            <h2>Grocery List App <img src="images/icon.png" alt="icon"></h2>
+            <h2>Write Your monthly Groceries</h2>
+            <div class="row">
+                <input type="text" id="input-box" placeholder="Write Something">
+                <button onclick="addTask()">Add</button>
+            </div>
+            <button onclick="deleteAllTasks()">Delete All</button> <!-- Delete All Button -->
+            <ul id="list-container">
+                <!-- Task items will be added here -->
+            </ul>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>   
+</body>
+</html>
