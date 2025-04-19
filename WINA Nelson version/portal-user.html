@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Portal - Wina Bwangu</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+            color: #333;
+            background-color: #f5f6fa;
+        }
+
+        /* Sidebar Navigation */
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(45deg, #4e73df, #1cc88a);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .nav-button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .logout-button {
+            background-color: #ff6b6b;
+            margin-top: auto;
+        }
+
+        .logout-button:hover {
+            background-color: #ff4757;
+        }
+
+        /* Main Content */
+        .content {
+            flex-grow: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .content h3 {
+            color: #4e73df;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .content-section button {
+            padding: 12px 20px;
+            background-color: #1cc88a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .content-section button:hover {
+            background-color: #17a673;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>User Portal</h2>
+        <button class="nav-button" onclick="window.location.href='transactions.html'">Make a Transaction</button>
+        <button class="nav-button" onclick="window.location.href='index22.html'">Transaction History</button>
+        <button class="nav-button" onclick="window.location.href='dashboard.html'">View Dashboard</button>
+        <button class="nav-button logout-button" onclick="logout()">Logout</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h3>Welcome to Your User Portal</h3>
+        <div id="user-info">
+            <p>Manage your transactions, view history, and access your dashboard.</p>
+        </div>
+
+        <!-- Transaction Section -->
+        <div class="content-section">
+            <h3>Your Transactions</h3>
+            <p>Manage your financial transactions quickly and securely.</p>
+            <button onclick="window.location.href='transactions.html'">Make a Transaction</button>
+        </div>
+
+        <!-- Transaction History Section -->
+        <div class="content-section">
+            <h3>Transaction History</h3>
+            <p>Review your past transactions and keep track of your financial activity.</p>
+            <button onclick="window.location.href='index22.html'">View Transaction History</button>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="content-section">
+            <h3>Dashboard</h3>
+            <p>View an overview of your account, recent activities, and insights.</p>
+            <button onclick="window.location.href='dashboard.html'">View Dashboard</button>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            if(confirm('Are you sure you want to logout?')) {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
+</body>
+</html>

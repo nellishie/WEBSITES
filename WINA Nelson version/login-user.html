@@ -1,0 +1,193 @@
+v<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wina Bwangu Login</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+            background: linear-gradient(45deg, #4e73df, #1cc88a, #f8c291);
+            background-size: 200% 200%;
+            animation: backgroundFade 10s ease-in-out infinite;
+        }
+
+        /* Fading Background Animation */
+        @keyframes backgroundFade {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Login Section */
+        #login {
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        #login h2 {
+            color: #4e73df;
+            margin-bottom: 20px;
+        }
+
+        #login label {
+            font-weight: bold;
+            display: block;
+            margin: 15px 0 5px;
+            text-align: left;
+            color: #333;
+        }
+
+        #login input[type="text"], #login input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: border 0.3s ease;
+        }
+
+        #login input[type="text"]:focus, #login input[type="password"]:focus {
+            border-color: #4e73df;
+            outline: none;
+        }
+
+        #login button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1cc88a;
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #login button:hover {
+            background-color: #17a673;
+            transform: translateY(-3px);
+        }
+
+        /* Remember Me Checkbox */
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .remember-me input {
+            margin-right: 10px;
+        }
+
+        /* Back Button */
+        .back-btn-container {
+            margin-top: 15px;
+        }
+
+        .back-btn {
+            color: #4e73df;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            color: #1cc88a;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Section -->
+    <section id="login">
+        <h2>Welcome to Wina Bwangu</h2>
+        <div id="error-message" style="color: red; margin-bottom: 15px;"></div>
+
+        <form id="login-form" onsubmit="return handleLogin(event)">
+            <input type="hidden" name="role" value="user">
+            <input type="hidden" id="redirect" value="portal-user.html">
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div class="remember-me">
+                <input type="checkbox" id="remember-me" name="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Back to Homepage Button -->
+        <div class="back-btn-container">
+            <a href="index.html" class="back-btn">Back to Homepage</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Wina Bwangu. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember-me').checked;
+            const redirectUrl = document.getElementById('redirect').value;
+
+            // Simple authentication logic (replace with actual authentication)
+            if (username && password) {
+                if (rememberMe) {
+                    localStorage.setItem('rememberMe', true);
+                    localStorage.setItem('username', username);
+                }
+                window.location.href = redirectUrl;
+            } else {
+                document.getElementById('error-message').textContent = 'Invalid credentials';
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
